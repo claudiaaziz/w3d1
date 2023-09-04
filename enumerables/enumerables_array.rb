@@ -62,22 +62,10 @@ class Array
         result
     end
 
-    # def my_rotate(n = 1)
-    #     rotated = self.dup
-
-    #     if n > 0
-    #         n.times do
-    #             rotated << self.shift
-    #             rotated.shift
-    #         end
-    #     else
-    #         -(n).times do
-    #             rotated << self.pop
-    #         end
-    #     end
-
-    #     rotated
-    # end
+    def my_rotate(rotate = 1)
+        split_idx = rotate % self.length
+        self[split_idx..-1] + self[0...split_idx]
+    end
 
     def my_join(join_on = "")
         joined = ''
